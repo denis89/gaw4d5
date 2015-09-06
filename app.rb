@@ -27,11 +27,9 @@ end
 
 # Show
 get '/show/:id' do
-  @id = params[:id]
 
-  sql = "id of the video='#{@id}'"
-
-  @url = @db.exec(sql)[0]["url"]
+  sql = "SELECT * FROM videos WHERE genre='#{params[:id]}'"
+  @videos = @db.exec(sql)
 
   erb :show 
 end

@@ -2,5 +2,13 @@
     <form action='/show/<%=video['id'] %>' method='get'>
       <button>Show</button>
     </form>  
+
+    <form action='/edit/<%=video['id']%>' method='put'>
+      <button class="button">Edit</button>
+    </form>
+  
+    <form action='/delete/<%=video['id'] %> <' method='delete'>
+      <button class="button">Delete</button>
+    </form>
  
 <% end %>

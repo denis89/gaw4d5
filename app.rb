@@ -37,8 +37,18 @@ end
 # Edit
 get '/edit/:id' do
 
-  sql = "SELECT * FROM videos WHERE genre='#{params[:id].to_i}'"
+  sql = "SELECT * FROM videos WHERE genre='#{params[:id]}'"
+  sql = sql.to_i
   @videos = @db.exec(sql)
 
   erb :update 
+end
+
+get '/delete/:id'  do 
+     @id = params[:id]
+     sql = "delete FROM videos where id = '#{@id}'"
+     @db.exec(sql)
+    
+    redirect to '/'
+
 end

@@ -33,3 +33,12 @@ get '/show/:id' do
 
   erb :show 
 end
+
+# Edit
+get '/edit/:id' do
+
+  sql = "SELECT * FROM videos WHERE genre='#{params[:id].to_i}'"
+  @videos = @db.exec(sql)
+
+  erb :update 
+end

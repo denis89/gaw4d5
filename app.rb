@@ -24,3 +24,14 @@ get '/new' do
     @db.exec(sql)
   erb :create
 end
+
+# Show
+get '/show/:id' do
+  @id = params[:id]
+
+  sql = "id of the video='#{@id}'"
+
+  @url = @db.exec(sql)[0]["url"]
+
+  erb :show 
+end

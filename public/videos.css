@@ -1,3 +1,10 @@
 #text {
   background-color: white;
+  width: 800px;
+  border: solid blue;
+  border-radius: 30px;
+  position: relative;
+  text-align: center;
+  /* Centering the text box  */
+  margin: 0 auto;
 }

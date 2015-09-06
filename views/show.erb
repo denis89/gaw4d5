@@ -1,0 +1,6 @@
+<% @videos.each do |video| %>
+    <form action='/show/<%=video['id'] %>' method='get'>
+      <button>Show</button>
+    </form>  
+ 
+<% end %>
